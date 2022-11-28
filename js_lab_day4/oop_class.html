@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop class</title>
+  </head>
+
+  <body>
+    <script>
+
+      //*using class
+      class Person {
+        constructor(fName, money, sleepMode, healthRate) {
+          this.fName = fName;
+          this.money = money;
+          this.sleepMode = sleepMode;
+          this.healthRate = healthRate;
+
+          this.sleep = function (hours) {
+            if (hours == 7) {
+              return (this.sleepMode = "happy");
+            } else if (hours < 7) {
+              return (this.sleepMode = "tired");
+            } else if (hours > 7) {
+              return (this.sleepMode = "lazy");
+            }
+          };
+
+          this.eat = function (meals) {
+            if (meals == 3) {
+              return (this.healthRate = `${100}%`);
+            } else if (meals == 2) {
+              return (this.healthRate = `${75}%`);
+            } else if (meals == 1) {
+              return (this.healthRate = `${50}%`);
+            }
+          };
+          this.buy = function (items) {
+            this.money -= items * 10;
+            if (this.money < 0) {
+              this.money = 0;
+            }
+            return this.money;
+          };
+        }
+      }
+
+      const personClass = new Person("ahmed", 200, "happy", `${75}%`);
+      console.log(personClass.fName);
+      console.log(personClass.buy(3));
+      console.log(personClass.sleep(10));
+      console.log(personClass.eat(2));
+      console.log(personClass);
+
+
+    </script>
+  </body>
+
+</html>

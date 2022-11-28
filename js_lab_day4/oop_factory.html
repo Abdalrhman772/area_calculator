@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop factory</title>
+  </head>
+
+  <body>
+    <script>
+
+      //* using factory functional
+      function Person(fName, money, sleepMode, healthRate) {
+        return {
+          fName,
+          money,
+          sleepMode,
+          healthRate,
+
+          sleep(hours) {
+            if (hours == 7) {
+              return (this.sleepMode = "happy");
+            } else if (hours < 7) {
+              return (this.sleepMode = "tired");
+            } else if (hours > 7) {
+              return (this.sleepMode = "lazy");
+            }
+          },
+
+          eat(meals) {
+            if (meals == 3) {
+              return (this.healthRate = `${100}%`);
+            } else if (meals == 2) {
+              return (this.healthRate = `${75}%`);
+            } else if (meals == 1) {
+              return (this.healthRate = `${50}%`);
+            }
+          },
+          buy(items) {
+            this.money -= items * 10;
+            if (this.money < 0) {
+              this.money = 0;
+            }
+            return this.money;
+          },
+        };
+      }
+
+      const personFactory = Person("nor", 500, "happy", `${75}%`);
+      console.log(personFactory.fName);
+      console.log(personFactory.buy(3));
+      console.log(personFactory.sleep(10));
+      console.log(personFactory.eat(1));
+      console.log(personFactory);
+
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop oloo</title>
+  </head>
+
+  <body>
+    <script>
+      //* using oloo
+      const Person = {
+        init(fName, money, sleepMode, healthRate) {
+          this.fName = fName;
+          this.money = money;
+          this.sleepMode = sleepMode;
+          this.healthRate = healthRate;
+
+          this.sleep = function (hours) {
+            if (hours == 7) {
+              return (this.sleepMode = "happy");
+            } else if (hours < 7) {
+              return (this.sleepMode = "tired");
+            } else if (hours > 7) {
+              return (this.sleepMode = "lazy");
+            }
+          };
+
+          this.eat = function (meals) {
+            if (meals == 3) {
+              return (this.healthRate = `${100}%`);
+            } else if (meals == 2) {
+              return (this.healthRate = `${75}%`);
+            } else if (meals == 1) {
+              return (this.healthRate = `${50}%`);
+            }
+          };
+          this.buy = function (items) {
+            this.money -= items * 10;
+            if (this.money < 0) {
+              this.money = 0;
+            }
+            return this.money;
+          };
+          return this
+        },
+      };
+
+      const personOloo = Object.create(Person).init("Ali", 300, "lazy", `${100}%`);
+      console.log(personOloo.fName);
+      console.log(personOloo.buy(6));
+      console.log(personOloo.sleep(7));
+      console.log(personOloo.eat(1));
+      console.log(personOloo);
+
+
+    </script>
+  </body>
+
+</html>
