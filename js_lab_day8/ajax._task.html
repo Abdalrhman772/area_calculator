@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            let myReq = new XMLHttpRequest();
+            myReq.open('GET', 'https://reqres.in/api/users?page=2');
+            myReq.send();
+            console.log(myReq);
+            myReq.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    let myData = JSON.parse(this.responseText).data;
+                    console.log(myData);
+                    for (let i = 0; i < myData.length; i++) {
+                        let div = document.createElement("div");
+                        let title = document.createElement("h3");
+                        title.innerText = `${myData[i].email}`
+                        let imgElement = document.createElement("img");
+                        imgElement.setAttribute('src', myData[i].avatar)
+                        imgElement.setAttribute('alt', 'user email')
+                        div.style.backgroundColor = 'lightgrey'
+                        div.style.display = 'flex'
+                        div.style.justifyContent = 'space-between'
+                        div.style.padding = '15px'
+                        div.style.margin = '15px 25%'
+                        div.appendChild(imgElement);
+                        div.appendChild(title);
+                        document.body.appendChild(div);
+                    }
+                }
+            };
+        </script>
+    </body>
+
+</html>
