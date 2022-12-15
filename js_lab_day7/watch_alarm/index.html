@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Clock $ Alarm</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <!--default time in case of error-->
+            <h1>00:00:00 PM</h1>
+            <h2>SET ALARM AFTER</h2>
+
+            <div class="inputs-container">
+                <div class="inputs">
+                    <select>
+                        <option value="Hour" hidden selected disabled>HOURS</option>
+                    </select>
+                </div>
+                <p>:</p>
+                <div class="inputs">
+                    <select>
+                        <option value="Minute" selected disabled hidden>MINUTES</option>
+                    </select>
+                </div>
+                <p>:</p>
+                <div class="inputs">
+                    <select>
+                        <option value="Second" selected hidden disabled>SECONDS</option>
+                    </select>
+                </div>
+                <div class="inputs">
+                    <select>
+                        <option value="AM/PM" hidden selected disabled>AM/PM</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+
+                <button id="set-button">Set</button>
+                <button id="clear-button">Clear</button>
+            </div>
+        </div>
+
+
+
+
+        <script src="./watch_alarm.js"></script>
+    </body>
+
+</html>

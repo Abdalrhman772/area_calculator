@@ -1,0 +1,55 @@
+body {
+  background-color: beige;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: rgb(143, 47, 47);
+}
+.container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+img {
+  object-fit: contain;
+  height: 600px;
+}
+.img-num {
+  color: black;
+  font-size: 26px;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.circle {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  background-color: lightgray;
+  border-radius: 50%;
+  transition: background-color 0.7s ease;
+}
+
+.active {
+  background-color: grey;
+}
+
+.custom-num {
+  color: rgb(155, 61, 61);
+  font-size: 32px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
