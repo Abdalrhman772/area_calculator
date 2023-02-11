@@ -10,13 +10,17 @@ body {
 
 h1,
 h2 {
-  color: darkslategray;
+  color: rgb(228, 206, 13);
+}
+
+h1 {
+  font-size: 45px;
 }
 
 p {
   text-decoration: none;
   text-align: center;
-  color: rgb(7, 163, 224);
+  color: rgb(224, 191, 7);
   height: 0px;
   width: 0px;
   font-weight: bold;
@@ -24,26 +28,27 @@ p {
 }
 
 .container {
-  background-color: white;
+  background-color: rgb(7, 13, 44);
   width: 500px;
   padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 1px 1px 1px 1px gray;
-  border-radius: 2px;
+  box-shadow: 1px 1px 1px 1px rgb(228, 206, 13);
+  border-radius: 5px;
 }
 
 .inputs-container {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin: 5px;
 }
 
 .inputs {
   /* padding: 0 10px; */
-  border: solid 3px lightblue;
+  border: solid 2px rgb(26, 181, 233);
   /* width: ; */
 }
 
@@ -55,7 +60,7 @@ select {
   outline: none;
   background: none;
   font-size: 18px;
-  color: darkslategrey;
+  color: rgb(15, 221, 221);
 }
 
 button {
@@ -63,15 +68,15 @@ button {
   outline: none;
   color: white;
   cursor: pointer;
-  font-size: 15px;
-  padding: 15px;
+  font-size: 18px;
+  padding: 12px;
   margin: 20px 2px 0 2px;
   border-radius: 5%;
 }
 
 #set-button {
-  background-color: #87cedb;
+  background-color: #0cc6e7;
 }
 #clear-button {
-  background-color: lightcoral;
+  background-color: rgb(197, 64, 64);
 }
